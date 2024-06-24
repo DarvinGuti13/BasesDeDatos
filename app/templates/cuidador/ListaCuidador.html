@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de cuidadores</title>
+    <link rel="icon" href="https://rawcdn.githack.com/CapiFrank/files/de8e7e1b14d521ce85696b01cf05b47ec0f8c403/img/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js"></script>
+</head>
+<header>
+    <script
+        src="https://rawcdn.githack.com/CapiFrank/js/05686f3826a9cbb43499bb3145c463d2fdf1052f/html_include.js"></script>
+    <div data-include="/header"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</header>
+
+<body onload="get_cuidador('/cuidador')">
+    <div class="container">
+        <div class="col">
+            <h1>Lista de Cuidadores</h1>
+            <p>
+                <a href="/cuidador/registrar">Agregar</a>
+            </p>  
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Cedula
+                        </th>
+                        <th>
+                            Nombre Completo
+                        </th>
+                        <th>
+                            Fecha De Ingreso En El Parque
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+        </div>
+    </div>
+    <script src="https://rawcdn.githack.com/CapiFrank/js/dad98a04d26b0d10411a8339e7c56616d7bbfb09/tablescript.js"> </script>
+</body>
+
+</html>
