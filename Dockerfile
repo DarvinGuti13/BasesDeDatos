@@ -1,13 +1,23 @@
-FROM python:3.8
 
-WORKDIR /usr/src
+FROM python:3.10-slim
+
+# Establece el directorio de trabajo
+WORKDIR /usr/src/app
+
+
 ENV FLASK_APP=app
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_ENV=development 
+ENV FLASK_ENV=production
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+# Instala dependencias
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-#COPY . .
+# Copia el resto del código de la aplicación
+COPY . .
 
-CMD ["flask", "run"]
+# Exponer el puerto 5000 para Flask
+EXPOSE 5000
+
+# Usa gunicorn como servidor WSGI
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000", "--workers", "3"]
